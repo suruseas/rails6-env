@@ -6,7 +6,14 @@ RUN apt-get update -qq && \
     git \
     libpq-dev \
     vim \
+    curl \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# install nodejs(LTS)
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && apt-get install -y nodejs
+
+# install yarn
+RUN npm install --global yarn
 
 ENV LANG=C.UTF-8 \
     BUNDLE_JOBS=4 \
