@@ -5,6 +5,7 @@ RUN apt-get update -qq && \
     build-essential \
     git \
     libpq-dev \
+    vim \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV LANG=C.UTF-8 \
